@@ -15,8 +15,8 @@ const CHILD = path.join(path.dirname(fileURLToPath(import.meta.url)), 'fixtures'
 async function spawnServer(env) {
   const child = spawn(process.execPath, [CHILD], { env: { ...process.env, ...env }, stdio: ['ignore', 'pipe', 'inherit'] });
   children.add(child);
-  child.unref();
-  child.stdout.unref?.();
+  // 等待启动握手和退出事件期间保留事件循环引用；否则 Node 22 会在
+  // 首条 stdout 消息到达前取消仍在等待的测试。after 钩子负责清理子进程。
   let buf = '';
   const info = await new Promise((resolve, reject) => {
     child.stdout.on('data', (d) => { buf += d; const i = buf.indexOf('\n'); if (i >= 0) resolve(JSON.parse(buf.slice(0, i))); });
