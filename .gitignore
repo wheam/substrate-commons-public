@@ -1,0 +1,22 @@
+node_modules/
+.env
+.env.*
+*.log
+.DS_Store
+.claude/
+# 实例数据永不进入引擎仓库
+/instance/
+/data/
+# 本地授权文件、备份与运行状态
+client_secret*.json
+credentials*.json
+*.pem
+*.key
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+*.bundle
+/backups/
+/coverage/
+/test-results/

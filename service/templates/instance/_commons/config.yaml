@@ -1,0 +1,15 @@
+# 实例配置：只能由 admin 经 update_config 修改；写入前做 schema 校验。
+version: 1
+display_name: "{{DISPLAY_NAME}}"
+limits:
+  page_max_bytes: 262144
+  total_max_bytes: 52428800
+# 个人信息策略：allow 放行 / warn 放行并提醒 / reject 拒绝。凭据类内容不受此配置影响，一律拒绝。
+pii:
+  email: warn
+  phone: warn
+  id_number: warn
+  bank_card: warn
+permissions:
+  delete: member
+page_types: {}

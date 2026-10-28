@@ -1,0 +1,21 @@
+{
+  "name": "substrate-commons",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --test-timeout=120000 'test/*.test.js'",
+    "cli": "node src/cli.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "express": "^5.2.1",
+    "markdown-it": "^14.3.3",
+    "yaml": "^2.9.1",
+    "zod": "^4.6.7"
+  }
+}

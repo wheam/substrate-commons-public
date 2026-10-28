@@ -1,0 +1,9 @@
+*
+!service/
+!service/package.json
+!service/package-lock.json
+!service/docker-entrypoint.sh
+!service/src/
+!service/src/**
+!service/templates/
+!service/templates/**

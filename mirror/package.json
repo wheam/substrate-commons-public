@@ -1,0 +1,17 @@
+{
+  "name": "substrate-commons-mirror",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "把一个 substrate-commons 实例脱敏后同步成持链接可读的公开网页",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --test-timeout=60000 'test/*.test.js'"
+  },
+  "dependencies": {
+    "markdown-it": "^14.3.3"
+  }
+}
